@@ -1,0 +1,96 @@
+#%% PARAMETERS -- GLOBAL VARIABLES -- EJEMPLO 1 %%#
+
+global_N=4 # Size of the population
+
+global_gamma=3 # per capita duration rate of the vaccine protection
+
+global_q = 0.01 # take (fraction of vaccinated individuals in whom the vaccione induces
+      # some degree of protection)
+
+global_C = 1 # Coverage level (fraction of individuals that are vaccinated)
+
+def global_eta(q,C): #Probability that a newborn will be vaccinated succesfuly (with some degree of protection)
+   return q*C
+
+global_alpha_u=5 # per capita infectious contact rate on unvaccinated susceptible individuals
+
+global_alpha_v=7 # per capita infectious contact rate on vaccinated susceptible individuals
+
+global_p_u=0.03 # probability that a non-vaccinated susceptible becomes infective
+
+global_p_v=0.05 # probability that a vaccinated susceptible becomes infective
+
+global_a_u = 11 # per capita reactivation rate of a non-vaccinated latenly infected individual
+
+global_b_u = 11 # per capita reinfection rate of a non-vaccinated latenly infected individual
+
+def global_r_u(I): #per capita rate of reactivation and reinfection of a non-vaccinated latently infected individual
+   return global_a_u+global_b_u*I
+
+global_a_v = 13 # per capita reactivation rate of a vaccinated latenly infected individual
+
+global_b_v = 13 # per capita reinfection rate of a vaccinated latenly infected individual
+
+def global_r_v(I): #per capita rate of reactivation and reinfection of a vaccinated latently infected individual
+   return global_a_v+global_b_v*I
+
+global_delta_TB = 15 # per capita rate of death due to tuberculosis
+
+global_delta_R = 17 # per capita effective treatment rate
+
+global_delta_D=19 # per capita death rate from causes beyond TB
+
+global_xi = 0.07 # probability that a recovered individual is considered as latent
+
+global_sigma_l_u=11 # probability that a recovered latent individual is considered as an unvaccinated individual
+
+global_sigma_s_u=13 # probability that a recovered susceptible individual is considered as an unvaccinated individual
+
+
+#%% PARAMETERS -- GLOBAL VARIABLES -- EJEMPLO 2 %%#
+
+global_N=4 # Size of the population
+
+global_gamma=0.03 # per capita duration rate of the vaccine protection
+
+global_q = 0.5 # take (fraction of vaccinated individuals in whom the vaccione induces
+      # some degree of protection)
+
+global_C = 1 # Coverage level (fraction of individuals that are vaccinated)
+
+def global_eta(q,C): #Probability that a newborn will be vaccinated succesfuly (with some degree of protection)
+   return q*C
+
+global_alpha_u=0.05 # per capita infectious contact rate on unvaccinated susceptible individuals
+
+global_alpha_v=0.07 # per capita infectious contact rate on vaccinated susceptible individuals
+
+global_p_u=0.9 # probability that a non-vaccinated susceptible becomes infective
+
+global_p_v=0.9 # probability that a vaccinated susceptible becomes infective
+
+global_a_u = 0.011 # per capita reactivation rate of a non-vaccinated latenly infected individual
+
+global_b_u = 0.011 # per capita reinfection rate of a non-vaccinated latenly infected individual
+
+def global_r_u(I): #per capita rate of reactivation and reinfection of a non-vaccinated latently infected individual
+   return global_a_u+global_b_u*I
+
+global_a_v = 0.013 # per capita reactivation rate of a vaccinated latenly infected individual
+
+global_b_v = 0.013 # per capita reinfection rate of a vaccinated latenly infected individual
+
+def global_r_v(I): #per capita rate of reactivation and reinfection of a vaccinated latently infected individual
+   return global_a_v+global_b_v*I
+
+global_delta_TB = 0.3 # per capita rate of death due to tuberculosis
+
+global_delta_R = 0.017 # per capita effective treatment rate
+
+global_delta_D=0.019 # per capita death rate from causes beyond TB
+
+global_xi = 0.07 # probability that a recovered individual is considered as latent
+
+global_sigma_l_u=0.011 # probability that a recovered latent individual is considered as an unvaccinated individual
+
+global_sigma_s_u=0.013 # probability that a recovered susceptible individual is considered as an unvaccinated individual

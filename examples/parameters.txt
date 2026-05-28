@@ -1,0 +1,37 @@
+#%% PARAMETERS -- GLOBAL VARIABLES %%#
+N=6 # Size of the population
+
+gamma=1 # per capita duration rate of the vaccine protection
+
+q = 0.5 # take (fraction of vaccinated individuals in whom the vaccione induces
+      # some degree of protection)
+C = 1 # Coverage level (fraction of individuals that are vaccinated)
+
+def eta(q,C): #Probability that a newborn will be vaccinated succesfuly (with some degree of protection)
+   return q*C
+
+alpha_u=1 # per capita infectious contact rate on unvaccinated susceptible individuals
+alpha_v=1 # per capita infectious contact rate on vaccinated susceptible individuals
+
+p_u=0.5 # probability that a non-vaccinated susceptible becomes infective
+p_v=0.5 # probability that a vaccinated susceptible becomes infective
+
+a_u = 1 # per capita reactivation rate of a non-vaccinated latenly infected individual
+b_u = 1 # per capita reinfection rate of a non-vaccinated latenly infected individual
+def r_u(I): #per capita rate of reactivation and reinfection of a non-vaccinated latently infected individual
+   return a_u+b_u*I
+
+a_v = 1 # per capita reactivation rate of a vaccinated latenly infected individual
+b_v = 1 # per capita reinfection rate of a vaccinated latenly infected individual
+def r_v(I): #per capita rate of reactivation and reinfection of a vaccinated latently infected individual
+   return a_v+b_v*I
+
+delta_TB = 1 # per capita rate of death due to tuberculosis
+
+delta_R = 1 # per capita effective treatment rate
+
+delta_D=1 # per capita death rate from causes beyond TB
+
+xi = 0.5 # probability that a recovered individual is considered as latent
+sigma_l_u=0.5 # probability that a recovered latent individual is considered as an unvaccinated individual
+sigma_s_u=0.5 # probability that a recovered susceptible individual is considered as an unvaccinated individual
