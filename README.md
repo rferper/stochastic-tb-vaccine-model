@@ -195,19 +195,6 @@ random.seed(42)
 duration, xmax, vaccinations = SIM.Sim_Trayectoria()
 r0 = SIM.Sim_Trayectoria_R0()
 ```
-
-### Computational Notes
-
-The state space grows as C(N+4, 4), making computation expensive for large N:
-
-| N  | States (J_T) | Approx. runtime |
-|:--:|:------------:|:---------------:|
-| 20 | 8,855        | ~1–2 min        |
-| 50 | ~270,000     | ~5 min          |
-| 100| ~4,400,000   | ~12 min         |
-
-Algorithms 1, 3, and 5 have complexity O(Σ J'(i)³); Algorithms 2 and 4 have complexity O(Σ J'(i)³ + (1 + V_q) Σ J'(i)²), where J'(i) = C(N−i+3, 3) is the number of states at level i.
-
 ---
 
 ## Parameter Reference
